@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ff_%z)%(%2weu-iqrz+*x5$zu3y+0qxjrri6rulrk2_5&rfz+y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app"]
 
 
 SIMPLE_JWT = {
