@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ff_%z)%(%2weu-iqrz+*x5$zu3y+0qxjrri6rulrk2_5&rfz+y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = ["*"]
 
 
 SIMPLE_JWT = {
@@ -102,13 +102,23 @@ WSGI_APPLICATION = 'customers.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'xue',
+        # 'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+                'host': 'mongodb+srv://xue:xue@todo.w1dhgok.mongodb.net/?retryWrites=true&w=majority'
+        }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
