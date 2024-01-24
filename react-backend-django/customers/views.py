@@ -7,6 +7,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def customers(request):
@@ -14,15 +15,16 @@ def customers(request):
         data = Customer.objects.all()
         serializer = CustomerSerializer(data, many=True)
         return Response({'customers': serializer.data})
-    
+
     elif request.method == 'POST':
         serializer = CustomerSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({'customer' : serializer.data}, status=status.HTTP_201_CREATED)
+            return Response({'customer': serializer.data}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET', 'POST', 'DELETE']) 
+
+@api_view(['GET', 'POST', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def customer(request, id):
     try:
@@ -42,6 +44,7 @@ def customer(request, id):
             serializer.save()
             return Response({'customer': serializer.data})
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['POST'])
 def register(request):
