@@ -10,9 +10,9 @@ function Employees() {
     const [employees, setEmployees] = useState([
         {
             id: 1,
-            name: 'Caleb',
-            role: 'YouTube Sensation',
-            img: 'https://images.pexels.com/photos/3831645/pexels-photo-3831645.jpeg',
+            name: 'Yongjie',
+            role: 'Software Developer',
+            img: 'https://yongjiex.github.io/authors/admin/avatar_huf1b31b51035e52429c9c9b5ac8802ecb_1196181_270x270_fill_q75_lanczos_center.jpg',
         },
         {
             id: 2,
